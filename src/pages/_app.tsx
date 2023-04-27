@@ -3,6 +3,7 @@ import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react';
 import type { AppProps } from 'next/app';
 import { createEmotionSsrAdvancedApproach } from 'tss-react/next/pagesDir';
 import Head from 'next/head';
+import { Analytics } from '@vercel/analytics/react';
 import Script from 'next/script';
 
 import { useRouter } from 'next/router';
@@ -112,6 +113,7 @@ function App({
           <ThemeProvider theme={customTheme}>
             <CssBaseline />
             <Component {...pageProps} />
+            <Analytics />
           </ThemeProvider>
         </CacheProvider>
       </ApolloProvider>
