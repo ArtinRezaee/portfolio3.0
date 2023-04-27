@@ -8,6 +8,7 @@ import Script from 'next/script';
 import { useRouter } from 'next/router';
 import { ApolloProvider } from '@apollo/client';
 import { usePathname } from 'next/navigation';
+import { CssBaseline } from '@mui/material';
 import createEmotionCache from '@/config/createEmotionCache';
 import customTheme from '@/config/theme';
 import '@/styles/globals.css';
@@ -104,6 +105,7 @@ function App({
       <ApolloProvider client={apolloClient}>
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={customTheme}>
+            <CssBaseline />
             <Component {...pageProps} />
           </ThemeProvider>
         </CacheProvider>
