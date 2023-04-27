@@ -74,6 +74,8 @@ function App({
           name="description"
           content="Artin Rezaee is a skilled Software Engineer from Calgary, Alberta, Canada with expertise in React, Angular, and NodeJS. He excels in building distributed systems with AWS and GCP, and leading successful development teams. With a passion for problem-solving, Artin delivers innovative solutions that meet business requirements and provide exceptional user experiences."
         />
+        <meta property="og:url" content="https://www.artinrez.com/" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:title"
           content="Artin Rezaee - Software Engineer Portfolio"
@@ -82,7 +84,10 @@ function App({
           property="og:description"
           content="Artin Rezaee is a skilled Software Engineer from Calgary, Alberta with expertise in React, Angular, and NodeJS. He excels in building distributed systems with AWS and GCP, and leading successful development teams. With a passion for problem-solving, Artin delivers innovative solutions that meet business requirements and provide exceptional user experiences."
         />
-        <meta property="og:image" content="/images/ogImage.png" />
+        <meta
+          property="og:image"
+          content="https://images.ctfassets.net/1n0e5yr6u20a/4HPIwOgeRQqVTmfJiID0V6/3988b9dbb7fc1f87752e3231828074bc/ogImage.png"
+        />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
