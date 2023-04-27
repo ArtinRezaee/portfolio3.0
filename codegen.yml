@@ -1,0 +1,31 @@
+schema:
+  - https://graphql.contentful.com/content/v1/spaces/1n0e5yr6u20a/environments/master:
+      headers:
+        Authorization: Bearer j3odqIamseVjttxqMMyipgAomPGhsc6pbrl2NM7klVw
+overwrite: true
+
+generates:
+  ./src/client/generated/schemas.ts:
+    documents: "./src/**/*.{gql,graphql}"
+    plugins:
+      - typescript
+
+  ./src/client/generated/operations.ts:
+    documents: "./src/**/*.{gql,graphql}"
+    preset: import-types
+    presetConfig:
+      typesPath: ./schemas
+    plugins:
+      - typescript-operations
+
+  ./src/client/generated/hooks.ts:
+    documents: "./src/**/*.{gql,graphql}"
+    preset: import-types
+    presetConfig:
+      typesPath: ./operations
+    plugins:
+      - typescript-react-apollo
+    config:
+      withHOC: false
+      withComponent: false
+      withHooks: true

@@ -1,0 +1,53 @@
+query GetWebsiteData {
+  navbarCollection(limit: 10, order: order_ASC) {
+    items {
+      titlle
+      linkToExternal
+      order
+      link
+    }
+  }
+  about(id: "1Qac60YjPkBCePrWEMXn2O") {
+    sectionName
+    description {
+      json
+    }
+    image {
+      url
+    }
+  }
+  experienceEntryCollection(limit: 10, order: startDate_DESC) {
+    items {
+      dateRange
+      role
+      roleHeader
+      roleDescription
+      company
+      isPresent
+      startDate
+      endDate
+      logo {
+        url
+      }
+    }
+  }
+  contactLinksCollection(order: sys_firstPublishedAt_ASC) {
+    items {
+      title
+      description
+      buttonText
+      link
+      type
+    }
+  }
+  projectsCollection(limit: 10, order: sys_firstPublishedAt_ASC) {
+    items {
+      name
+      image {
+        url
+      }
+      description
+      link
+    }
+  }
+}
