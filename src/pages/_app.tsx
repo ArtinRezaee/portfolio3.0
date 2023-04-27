@@ -60,9 +60,7 @@ function App({
     };
   }, [gtagPageView, router.events]);
 
-  if (isLoading && isHome) {
-    return <SplashScreen finishLoading={() => setIsLoading(false)} />;
-  }
+  const showLoader = isLoading && isHome;
 
   return (
     <>
@@ -108,15 +106,18 @@ function App({
           gtag('config', '${GA_TRACKING_ID}');
         `}
       </Script>
-      <ApolloProvider client={apolloClient}>
-        <CacheProvider value={emotionCache}>
-          <ThemeProvider theme={customTheme}>
-            <CssBaseline />
-            <Component {...pageProps} />
-            <Analytics />
-          </ThemeProvider>
-        </CacheProvider>
-      </ApolloProvider>
+      {showLoader && <SplashScreen finishLoading={() => setIsLoading(false)} />}
+      {!showLoader && (
+        <ApolloProvider client={apolloClient}>
+          <CacheProvider value={emotionCache}>
+            <ThemeProvider theme={customTheme}>
+              <CssBaseline />
+              <Component {...pageProps} />
+              <Analytics />
+            </ThemeProvider>
+          </CacheProvider>
+        </ApolloProvider>
+      )}
     </>
   );
 }
